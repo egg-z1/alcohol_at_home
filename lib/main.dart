@@ -1,3 +1,4 @@
+import 'package:alcohol_at_home/cocktail_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:alcohol_at_home/home.dart';
@@ -24,6 +25,10 @@ class MyApp extends StatelessWidget {
           name: '/home',
           page: () => Home(),
         ),
+        GetPage(
+          name: '/cocktailList',
+          page: () => CocktailList(),
+        )
       ],
       debugShowCheckedModeBanner: false,
     );

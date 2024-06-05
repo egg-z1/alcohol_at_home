@@ -5,11 +5,10 @@ class CocktailProvider extends GetConnect implements GetxService {
   static const _baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1/';
 
   Future<List<CocktailRecipe>?> getCocktailRecipes() async {
-    String url = '${_baseUrl}filter.php?c=Cocktail';
-    Response response = await get(url);
-    print(response.body);
+    final String url = '${_baseUrl}filter.php?c=Cocktail';
+    final Response response = await get(url);
     if (response.status.hasError) {
-      return Future.error(response.statusText as Object);
+      return Future.error(response.statusText ?? 'Error fetching data');
     } else {
       return cocktailRecipesFromJson(response.body);
     }
