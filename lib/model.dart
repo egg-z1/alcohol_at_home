@@ -1,6 +1,6 @@
 List<CocktailRecipe> cocktailRecipesFromJson(dynamic str) =>
     List<CocktailRecipe>.from(
-        (str['drinks']).map((x) => CocktailRecipe.fromJson(x)));
+        (str['drinks'] ?? []).map((x) => CocktailRecipe.fromJson(x)));
 
 class CocktailRecipe {
   String? idDrink;
@@ -9,11 +9,11 @@ class CocktailRecipe {
 
   CocktailRecipe({this.idDrink, this.strDrink, this.strDrinkThumb});
 
-  CocktailRecipe.fromJson(Map<String, dynamic> json) {
-    idDrink = json['idDrink'];
-    strDrink = json['strDrink'];
-    strDrinkThumb = json['strDrinkThumb'];
-  }
+  factory CocktailRecipe.fromJson(Map<String, dynamic> json) => CocktailRecipe(
+        idDrink: json['idDrink'],
+        strDrink: json['strDrink'],
+        strDrinkThumb: json['strDrinkThumb'],
+      );
 
   Map<String, dynamic> toJson() => {
         'idDrink': idDrink,
