@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:alcohol_at_home/model.dart';
 
+//model에서 호출
 class CocktailProvider extends GetConnect implements GetxService {
   static const _baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1/';
 

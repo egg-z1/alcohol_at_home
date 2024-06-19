@@ -10,9 +10,9 @@ class CocktailRecipe {
   CocktailRecipe({this.idDrink, this.strDrink, this.strDrinkThumb});
 
   factory CocktailRecipe.fromJson(Map<String, dynamic> json) => CocktailRecipe(
-        idDrink: json['idDrink'],
-        strDrink: json['strDrink'],
-        strDrinkThumb: json['strDrinkThumb'],
+        idDrink: json['idDrink'], //id
+        strDrink: json['strDrink'], //칵테일 이름
+        strDrinkThumb: json['strDrinkThumb'], //칵테일 이미지
       );
 
   Map<String, dynamic> toJson() => {
